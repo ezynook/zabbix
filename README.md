@@ -1,4 +1,4 @@
-<img src="https://cloud.microsystems.co.th/wp-content/uploads/2020/02/zabbix_logo_600x300.jpg" width="90">
+<img src="https://camo.githubusercontent.com/71e79cfd6b679d246f9c432811761bc96eeeaf8680c15db2a8aa842d67398f45/68747470733a2f2f6173736574732e7a61626269782e636f6d2f696d672f6c6f676f2f7a61626269785f6c6f676f5f353030783133312e706e67" width="90">
 
 ## 🖥 Zabbix On Docker
 
