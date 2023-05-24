@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  zabbix:
+    image: ${ZBX_VERSION}
+    container_name: zabbix
+    restart: always
+    ports:
+      - "${WEBPORT}:80"
+      - "${SNMPPORT}:161"
+      - "${ZBXAGENT}:10050"
+      - "${ZBXSERVER}:10051"
+      - "${DBPORT}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - zabbix_config:/etc/zabbix
+
+volumes:
+  mysql_data:
+  zabbix_config:
