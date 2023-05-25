@@ -37,7 +37,7 @@ __แก้ไข Environment ตามที่ต้องการ__
 $ vim .env
 ```
 ```ini
-ZBX_VERSION=5
+ZBX_VERSION=ezynook/zabbix:<version>
 WEBPORT=80
 SNMPPORT=161
 ZBXAGENT=10050
