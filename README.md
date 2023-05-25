@@ -7,6 +7,12 @@ __Frontend Configuration__ = Default
 __Database Configuration__ = Bind 0.0.0.0
 * Username: zabbix | Password: P@ssw0rd
 
+Available Version
+* version 4 LTS (ezynook/zabbix:4)
+* version 5 LTS (ezynook/zabbix:5)
+* version 6.4 (ezynook/zabbix:6)
+* version 7 PRE-RELEASE (ezynook/zabbix:7)
+
 ## Setup
 __Download Project__
 
