@@ -60,7 +60,7 @@ $ docker run -d --name zabbix \
 	-p 10051:10051 -p 3306:3306 \
 	-v mysql_data:/var/lib/mysql \
 	-v zabbix_config:/etc/zabbix \
-	zabbix:<version>
+	ezynook/zabbix:<version>
 ```
 
 __Open Browser__
