@@ -3,7 +3,7 @@ services:
 
   zabbix:
     image: ezynook/zabbix:${ZBX_VERSION}
-    container_name: zabbix${ZBX_VERSION}
+    container_name: zabbix
     restart: always
     ports:
       - 80:80
