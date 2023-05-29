@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  zabbix:
+    image: ezynook/zabbix:${ZBX_VERSION}
+    container_name: zabbix4
+    restart: always
+    ports:
+      - 80:80
+      
+  zabbixdb:
+    image: ezynook/zabbixdb:${ZBX_VERSION}
+    container_name: zabbixdb
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
