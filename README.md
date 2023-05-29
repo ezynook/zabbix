@@ -57,13 +57,14 @@ $ docker-compose -f docker-compose.multiple.yml up -d \
   && docker exec -it zabbix /bin/bash -c "sed -i 's/DBHost=localhost/DBHost=zabbixdb/g' /etc/zabbix/zabbix_server.conf" \
   && docker restart zabbix
 ```
-หรือใช้ Bash Script
+หรือใช้ Shell Script
 ```bash
 $ chmod +x start-multiple.sh
 $ ./start-multiple.sh
 ```
+🔧 ตั้งต่าหน้า WebUI ขั้นตอนตั้งค่า ```Database Connection``` ให้ติ๊ก ```[ ] Database TLS encryption``` ออก
+🔧 ตั้งค่าหน้า WebUI ช่อง ```Database Server``` ใส่เป็น ```zabbixdb```
 
-ตอนตั้งต่าหน้า WebUI ขั้นตอนตั้งค่า Database Connection ให้ติ๊ก [ ] Database TLS encryption ออก
 __One Time Test__
 ```bash
 $ docker volume create zabbix_config
