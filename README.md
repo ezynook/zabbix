@@ -17,8 +17,7 @@ Available Version
 __Download Project__
 
 ```bash
-$ cd /some/path/zabbix
-$ git clone https://github.com/ezynook/zabbix.git
+$ cd /some/path/zabbix && git clone https://github.com/ezynook/zabbix.git
 ```
 __Change Directory__
 ```bash
@@ -48,8 +47,7 @@ DBPORT=3306
 __Running__
 
 ```bash
-$ chmod +x start.sh 
-$ docker-compose up -d
+$ chmod +x start.sh && docker-compose up -d
 ```
 __หากต้องการแยก Web UI และ Database__
 ```bash
@@ -59,8 +57,7 @@ $ docker-compose -f docker-compose.multiple.yml up -d \
 ```
 __หรือใช้ Shell Script__
 ```bash
-$ chmod +x start-multiple.sh
-$ ./start-multiple.sh
+$ chmod +x start-multiple.sh && ./start-multiple.sh
 ```
 🔧 ตั้งค่าหน้า WebUI ขั้นตอนตั้งค่า ```Database Connection``` ให้ติ๊ก ```[ ] Database TLS encryption``` ออก
 
