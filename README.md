@@ -70,8 +70,8 @@ __One Time Test__
 ```sh
 docker volume create zabbix_config \
 && docker volume create mysql_data
+```
 ```bash
-
 $ docker run -d --name zabbix \
 	-p 80:80 -p 161:161 -p 10050:10050 \
 	-p 10051:10051 -p 3306:3306 \
