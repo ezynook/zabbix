@@ -4,7 +4,7 @@
 
 __Frontend Configuration__ = Default
 
-__Database Configuration__ = Bind 0.0.0.0
+__Database Configuration__ = Bind Remote Host
 * Username: zabbix | Password: P@ssw0rd
 
 Available Version
@@ -26,7 +26,7 @@ $ cd zabbix
 ```
 __แก้ไข Environment ตามที่ต้องการ__
 
-* ZBX_VERSION = เวอร์ชั่นที่ต้องการ ณ ตอนนี้มี 5 และ 6
+* ZBX_VERSION = เวอร์ชั่นที่ต้องการ ณ ตอนนี้มี 4-7
 * WEBPORT = Port ในการเข้าเว็บ Zabbix
 * SNMPPORT = Port ที่ Client ส่ง SNMP
 * ZBXAGENT = Port ที่ Client ส่ง Agent
@@ -37,7 +37,7 @@ __แก้ไข Environment ตามที่ต้องการ__
 $ vim .env
 ```
 ```ini
-ZBX_VERSION=ezynook/zabbix:<version>
+ZBX_VERSION=<version>
 WEBPORT=80
 SNMPPORT=161
 ZBXAGENT=10050
