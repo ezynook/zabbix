@@ -85,7 +85,7 @@ $ docker run -d --name zabbixdb \
         -p 3306:3306 \
 	--restart=always \
 	--network=zabbix_nw \
-	-v mysql_data:/var/www/html \
+	-v mysql_data:/var/lib/mysql \
 	ezynook/zabbixdb:<version>
 $ docker run -d --name zabbix \
 	-p 80:80 -p 161:161 -p 10050:10050 \
