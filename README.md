@@ -67,9 +67,11 @@ $ ./start-multiple.sh
 🔧 ตั้งค่าหน้า WebUI ช่อง ```Database Server``` ใส่เป็น ```zabbixdb```
 
 __One Time Test__
+```sh
+docker volume create zabbix_config \
+&& docker volume create mysql_data
 ```bash
-$ docker volume create zabbix_config
-$ docker volume create mysql_data
+
 $ docker run -d --name zabbix \
 	-p 80:80 -p 161:161 -p 10050:10050 \
 	-p 10051:10051 -p 3306:3306 \
@@ -78,15 +80,19 @@ $ docker run -d --name zabbix \
 	ezynook/zabbix:<version>
 ```
 __หากต้องการแยก Web UI และ Database__
-```bash
-$ docker volume create zabbix_config \
+```sh
+docker volume create zabbix_config \
   && docker volume create mysql_data
+```
+```sh
 $ docker run -d --name zabbixdb \
         -p 3306:3306 \
 	--restart=always \
 	--network=zabbix_nw \
 	-v mysql_data:/var/lib/mysql \
 	ezynook/zabbixdb:<version>
+```
+```bash
 $ docker run -d --name zabbix \
 	-p 80:80 -p 161:161 -p 10050:10050 \
 	-p 10051:10051 \
