@@ -2,7 +2,7 @@ version: '3'
 services:
 
   zabbix:
-    image: ${ZBX_VERSION}
+    image: ezynook/zabbix:${ZBX_VERSION}
     container_name: zabbix
     restart: always
     ports:
