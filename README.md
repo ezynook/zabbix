@@ -79,7 +79,8 @@ $ docker run -d --name zabbix \
 __หากต้องการแยก Web UI และ Database__
 ```sh
 docker volume create zabbix_config \
-  && docker volume create mysql_data
+  && docker volume create mysql_data \
+  && docker network create --driver bridge zabbix_nw
 ```
 ```sh
 $ docker run -d --name zabbixdb \
