@@ -96,7 +96,7 @@ $ docker run -d --name zabbix \
 	-p 10051:10051 \
 	--restart=always \
 	--network=zabbix_nw \
-	--link zabbixdb:db \
+	--link zabbixdb:zabbixdb \
 	-v zabbix_config:/etc/zabbix \
 	ezynook/zabbix:<version> \
 	&& sleep 5 \
