@@ -98,7 +98,10 @@ $ docker run -d --name zabbix \
 	--network=zabbix_nw \
 	--link zabbixdb:db \
 	-v zabbix_config:/etc/zabbix \
-	ezynook/zabbix:<version>
+	ezynook/zabbix:<version> \
+	&& sleep 5 \
+	&& docker exec -it zabbix /bin/bash -c "sed -i 's/# DBHost=localhost/DBHost=zabbixdb/g' /etc/zabbix/zabbix_server.conf" \
+	&& docker restart zabbix
 ```
 
 __Open Browser__
