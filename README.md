@@ -63,46 +63,6 @@ $ chmod +x start-multiple.sh && ./start-multiple.sh
 
 🔧 ตั้งค่าหน้า WebUI ช่อง ```Database Server``` ใส่เป็น ```zabbixdb```
 
-__One Time Test__
-```sh
-docker volume create zabbix_config \
-&& docker volume create mysql_data
-```
-```bash
-$ docker run -d --name zabbix \
-	-p 80:80 -p 161:161 -p 10050:10050 \
-	-p 10051:10051 -p 3306:3306 \
-	-v mysql_data:/var/lib/mysql \
-	-v zabbix_config:/etc/zabbix \
-	ezynook/zabbix:<version>
-```
-__หากต้องการแยก Web UI และ Database__
-```sh
-docker volume create zabbix_config \
-  && docker volume create mysql_data \
-  && docker network create --driver bridge zabbix_nw
-```
-```sh
-$ docker run -d --name zabbixdb \
-        -p 3306:3306 \
-	--restart=always \
-	--network=zabbix_nw \
-	-v mysql_data:/var/lib/mysql \
-	ezynook/zabbixdb:<version>
-```
-```bash
-$ docker run -d --name zabbix \
-	-p 80:80 -p 161:161 -p 10050:10050 \
-	-p 10051:10051 \
-	--restart=always \
-	--network=zabbix_nw \
-	--link zabbixdb:zabbixdb \
-	-v zabbix_config:/etc/zabbix \
-	ezynook/zabbix:<version> \
-	&& sleep 5 \
-	&& docker exec -it zabbix /bin/bash -c "sed -i 's/# DBHost=localhost/DBHost=zabbixdb/g' /etc/zabbix/zabbix_server.conf" \
-	&& docker restart zabbix
-```
 
 __Open Browser__
 
