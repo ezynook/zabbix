@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e 
-
 if [ -n "$(docker ps | grep zabbix)" ]; then
 	docker rm -f zabbix > /dev/null
 	if [ -n "$(docker volume ls | grep mysql_data)" ]; then
@@ -13,4 +11,3 @@ if [ -n "$(docker ps | grep zabbix)" ]; then
 else
 	docker-compose up -d
 fi
-exec "$@"
