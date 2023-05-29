@@ -54,7 +54,7 @@ $ docker-compose up -d
 __หากต้องการแยก Web UI และ Database__
 ```bash
 $ docker-compose -f docker-compose.multiple.yml up -d \
-  && docker exec -it zabbix /bin/bash -c "sed -i 's/DBHost=localhost/DBHost=zabbixdb/g' /etc/zabbix/zabbix_server.conf" \
+  && docker exec -it zabbix /bin/bash -c "sed -i 's/# DBHost=localhost/DBHost=zabbixdb/g' /etc/zabbix/zabbix_server.conf" \
   && docker restart zabbix
 ```
 หรือใช้ Shell Script
