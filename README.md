@@ -77,6 +77,25 @@ $ docker run -d --name zabbix \
 	-v zabbix_config:/etc/zabbix \
 	ezynook/zabbix:<version>
 ```
+__หากต้องการแยก Web UI และ Database__
+```bash
+$ docker volume create zabbix_config \
+  && docker volume create mysql_data
+$ docker run -d --name zabbixdb \
+        -p 3306:3306 \
+	--restart=always \
+	--network=zabbix_nw \
+	-v mysql_data:/var/www/html \
+	ezynook/zabbixdb:<version>
+$ docker run -d --name zabbix \
+	-p 80:80 -p 161:161 -p 10050:10050 \
+	-p 10051:10051 \
+	--restart=always \
+	--network=zabbix_nw \
+	--link zabbixdb:db \
+	-v zabbix_config:/etc/zabbix \
+	ezynook/zabbix:<version>
+```
 
 __Open Browser__
 
