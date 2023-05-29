@@ -62,7 +62,7 @@ $ docker-compose -f docker-compose.multiple.yml up -d \
 $ chmod +x start-multiple.sh
 $ ./start-multiple.sh
 ```
-🔧 ตั้งต่าหน้า WebUI ขั้นตอนตั้งค่า ```Database Connection``` ให้ติ๊ก ```[ ] Database TLS encryption``` ออก
+🔧 ตั้งค่าหน้า WebUI ขั้นตอนตั้งค่า ```Database Connection``` ให้ติ๊ก ```[ ] Database TLS encryption``` ออก
 
 🔧 ตั้งค่าหน้า WebUI ช่อง ```Database Server``` ใส่เป็น ```zabbixdb```
 
