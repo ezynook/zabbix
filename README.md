@@ -2,28 +2,28 @@
 
 ## 🖥 Zabbix On Docker
 
-__Frontend Configuration__ = Default
+🟢 __Frontend Configuration__ = Default
 
-__Database Configuration__ = Bind Remote Host
+🟢 __Database Configuration__ = Bind Remote Host
 * Username: zabbix | Password: P@ssw0rd
 
 Available Version
-* version 4 LTS (ezynook/zabbix:4)
-* version 5 LTS (ezynook/zabbix:5)
-* version 6.4 (ezynook/zabbix:6)
-* version 7 PRE-RELEASE (ezynook/zabbix:7)
+* ✔️ version 4 LTS (ezynook/zabbix:4)
+* ✔️ version 5 LTS (ezynook/zabbix:5)
+* ✔️ version 6.4 (ezynook/zabbix:6)
+* ✔️ version 7 PRE-RELEASE (ezynook/zabbix:7)
 
-## Setup
-__Download Project__
+## 📦 Setup
+👉 __Download Project__
 
 ```bash
 $ cd /some/path/zabbix && git clone https://github.com/ezynook/zabbix.git
 ```
-__Change Directory__
+👉 __Change Directory__
 ```bash
 $ cd zabbix
 ```
-__แก้ไข Environment ตามที่ต้องการ__
+👉 __แก้ไข Environment ตามที่ต้องการ__
 
 * ZBX_VERSION = เวอร์ชั่นที่ต้องการ ณ ตอนนี้มี 4-7
 * WEBPORT = Port ในการเข้าเว็บ Zabbix
@@ -44,18 +44,18 @@ ZBXSERVER=10051
 DBPORT=3306
 ```
 
-__Running__
+👉  __Running__
 
 ```bash
 $ chmod +x start.sh && docker-compose up -d
 ```
-__หากต้องการแยก Web UI และ Database__
+👉 __หากต้องการแยก Web UI และ Database__
 ```bash
 $ docker-compose -f docker-compose.multiple.yml up -d \
   && docker exec -it zabbix /bin/bash -c "sed -i 's/# DBHost=localhost/DBHost=zabbixdb/g' /etc/zabbix/zabbix_server.conf" \
   && docker restart zabbix
 ```
-__หรือใช้ Shell Script__
+👉 __หรือใช้ Shell Script__
 ```bash
 $ chmod +x start-multiple.sh && ./start-multiple.sh
 ```
@@ -64,10 +64,10 @@ $ chmod +x start-multiple.sh && ./start-multiple.sh
 🔧 ตั้งค่าหน้า WebUI ช่อง ```Database Server``` ใส่เป็น ```zabbixdb```
 
 
-__Open Browser__
+🌎 __Open Browser__
 
 ```http://localhost/zabbix```
 
 ---
 
-> Docker builded by Pasit Yodsoi (pasit.dev)
+> ⚒️ Docker builded by Pasit Yodsoi (pasit.dev)
