@@ -57,7 +57,7 @@ $ docker-compose -f docker-compose.multiple.yml up -d \
   && docker exec -it zabbix /bin/bash -c "sed -i 's/# DBHost=localhost/DBHost=zabbixdb/g' /etc/zabbix/zabbix_server.conf" \
   && docker restart zabbix
 ```
-หรือใช้ Shell Script
+__หรือใช้ Shell Script__
 ```bash
 $ chmod +x start-multiple.sh
 $ ./start-multiple.sh
